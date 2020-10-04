@@ -1,0 +1,61 @@
+Hashing is a technique that is used to uniquely identify a specific object from a group of similar objects.
+Hashing is used to store and retrieve the data in the efficient way.
+
+Some example is :- name in the attandance register such that each student is identified uniquely.
+
+In the hashing we have an object and we wanted to store it such that we can search it easily so we assign
+a key to that value i.e (key: value pair) for small key we can directly make or use the index as the key
+but when we have large values of the keys so we can't use them directly as the index so here we have
+solution for it that is hashing.
+
+****** In hashing large keys are conveted into the small keys by using hash function.
+	and the values are stored in the data structure called hash table ****
+the main idea behind it is to access the values in the o(1) time.
+
+###
+	HAshing is implemented in the two ways
+	i)	the element is converted into integer by using hash function .So that the element
+		can be used as index to store the original element that is stored in the hash table.
+	ii)	the element is stored in the hash table where it can be quicly retrive using the hash
+		key.
+		hash=hashfunc(key)
+		index=hash%array_size
+
+****NOTE:- In this the hash is independent of the size of the table and is converted into (0 -- arraysize-1)
+
+Hash function:-
+	A hash function is any function that is used to map the data set of an arbitrary size to the
+	data set of the fixed size, which falls into hash table.The vlues return by the hash function
+	is termed as hash value ,hash code hash sum.
+
+** To achieve the good hashing mechanism it is important to have a good hash fucntion with the given
+   qualities or requirements.
+	1) It should be easy to calculate
+	2) Do not produce clustering i.e should be result in the uniform distribution
+	3) Less collision
+
+
+**************** COllision resolution technique *****************
+i)Saperate chaining (Open hashing)
+	It is most commonly used collision resolution technique, and it uses linked list to store the
+item, i.e each item is stored in the linked list and if any collision will occur then a seperate
+chain is startes in that branch.
+
+****NOTE******
+in wrost case the all the element may fall in the same linked list branch and again it will take O(N) time to 
+search the element.
+
+
+ii) Linear probing
+	In open addressing, instead of the linked list we use array directly and after calculating
+the hash value we put that record at the index that is equal to the hash value and iff the place is
+unoccupied and if the place will occupied then the we search the next index till we found a blank index
+by teaversing each time +1 position.
+
+i.e
+
+index=index%hashtablesize
+index=(index+1)%hashtablesize "" till we find all the element
+
+to find the element we have to search that index or the unoccupied index.
+

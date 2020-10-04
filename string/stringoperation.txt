@@ -1,0 +1,23 @@
+String
+
+s.swapcase()  doesn't take any argument and return the string having all the case is swaaped i.e the lower latter become the upper letter and the upper later become the lower letter
+
+string methods
+
+str.isalnum()
+this method is for checking whether the character only contain the (a-z,A-Z, 0-9)
+
+str.isalpha()
+this methoda checks whether the string can have only (a-z, A-Z)
+
+str.isdigit()
+this method checks whether the string will hace only (0-9)
+
+str.islower()
+this method will check whether the string will have only the lower case(a-z)
+
+str.isupper()
+this method will return whether the string will have only the uppr letter (A-Z)
+
+str.capitalize()
+will do the first character uppercase

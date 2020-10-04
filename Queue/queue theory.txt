@@ -1,0 +1,128 @@
+############### QUEUE ##########################################
+
+The queue is the data structure that follow the FIFO i.e the first in first out the first element is 
+added is the first one to removed.
+
+"Elements are added from the back(rear) side and are removed from the front side"
+
+Let's take an example of the bus stand i.e the people who came first at the bus stop is at the first
+position and at the front of everyone so that when the bus will come he is the first one to enter
+in the bus i.e FIFO first in at the bus stop and first out to bus.
+
+********************  VAriable used  ********************
+
+Queue:- array in which queue is simulated
+arraysize:- the maximum number of thr elements that can be stored in the queue
+front:- points from where the element is deleted
+rear:- rear is the point from where is the element is inserted
+
+*********************** Function supported ******************
+-->Enqueue :- it inserts the elements in the queue iff there is any space remaining in the queue
+else it returns queue "overflow"
+
+enqueue function
+
+if rear==arraysize:
+	print("overflow")
+elif rear==0:
+	queue[rear]=element
+	rear+=1
+	front+=1
+else:
+ 	queue[rear]=element
+	rear+=1
+
+
+--> Dequeue:-if the queue is not empty the it removes one element from the rear and if queue is empty
+the it return underflow
+
+if front==rear:
+	print("underflow")
+else:
+	queue[front]=0
+	front+=1
+
+--> front :- it returns the front element from the queue
+
+return queue[front]
+
+--> size:- it returns the size of the queue or the number of element in the queue
+
+return (rear-front)
+
+--> isempty :- it returns either the queue is empty or not i.e
+retuen (front==rear)
+
+******************************************** implmentation **************************************
+
+from queue import Queue
+q= Queue()
+q.put("element") IT will insert an element in thr queue
+q.get() will remove and retuen the element present at the rear 
+q.empty() will return True if queue is empty
+q.full() will return True if the queue is full
+
+##################################### TYPES OF QUEUE ##############################################
+
+DOuble ended queue:- In this type of queue we can add and delete the element from both the end (from front and rear):
+
+** INsert at back **
+
+if rear==size:
+	print("Overflow")
+else:
+ queue[rear]=element
+ rear+=1
+
+** Delete from the back **
+if rear==0:
+	print("Under flow")
+else:
+	rear-=1
+ 	queue[rear]=0
+
+*** Insert at front ***
+if rear==size:
+	print("Overflow")
+else: 
+	
+	for i in range(rear,front):  // 1,2,3,4,5,_,_ insert 8 at front so we do 1,1,2,3,4,5,_--> 8,1,2,3,4,5,_
+		queue[i]=queue[i-1]
+	queue[front]=element
+	rear=rear+1
+
+** delete from front **
+if rear==front:
+	print("Under flow")
+else:
+	queue[front]=0
+	front=front+1
+
+####################################################################################################
+
+***********  Circular queue  *************
+Enqueue:
+
+if count==arraysize:
+	print("Overflow")
+else:
+	queue[rear]=element
+	rear=(rear+1)%arraysize
+	count+=1
+
+Dequeue:
+
+ if count==0:
+	print("Overflow")
+else:
+	queue[front]=0
+	front=(front+1)%arraysize
+	count-=1
+
+size=counr
+isempty=if count==0
+frontelement=
+
+	
+	
+	
